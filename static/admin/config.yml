@@ -1,0 +1,33 @@
+backend:
+  name: git-gateway
+  branch: master
+
+media_folder: static/img
+public_folder: /img
+
+collections:
+  - name: "link"
+    label: "Link"
+    folder: "_links"
+    create: true
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - name: ltype
+        label: "Link Type"
+        widget: select
+        options:
+          - label: Video
+            value: VID
+          - label: Audio
+            value: AUD
+          - label: Other
+            value: OTH
+      - label: "Title"
+        name: "title"
+      - label: "Tag"
+        name: "tag"
+        pattern:
+          - "^[^, ]+$"
+          - "Only 1 tag is allowed with no spaces or commas"
+      - label: "URL"
+        name: "url"

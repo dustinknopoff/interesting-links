@@ -1,3 +1,9 @@
+:root {
+  --main-txt-color: #007aff;
+  --main-opp-color: #ff8400;
+  --main-txt-color-dark: #5aa8fc;
+}
+
 html {
   font-family: sans-serif;
   -ms-text-size-adjust: 100%;
@@ -5,8 +11,15 @@ html {
 }
 body {
   margin: 0;
+  color: var(--main-txt-color);
   -webkit-font-smoothing: antialiased;
   -moz-osx-font-smoothing: grayscale;
+}
+html {
+  background: url("https://res.cloudinary.com/dknopoff/image/upload/f_auto/v1553460730/portfolio/pipes.png")
+    repeat center center fixed;
+  width: 100%;
+  height: 100%;
 }
 article,
 aside,
@@ -41,6 +54,8 @@ template {
 }
 a {
   background-color: transparent;
+  text-decoration: none;
+  color: inherit;
   -webkit-text-decoration-skip: objects;
 }
 a:active,
@@ -86,6 +101,8 @@ sup {
 }
 img {
   border-style: none;
+  opacity: 100;
+  transition: opacity 0.5s ease 0.5s;
 }
 svg:not(:root) {
   overflow: hidden;
@@ -199,8 +216,8 @@ html {
   box-sizing: inherit;
 }
 body {
-  color: hsla(0, 0%, 0%, 0.8);
-  font-family: georgia, serif;
+  color: var(--main-txt-color);
+  font-family: "Montserrat", sans-serif;
   font-weight: normal;
   word-wrap: break-word;
   font-kerning: normal;
@@ -229,9 +246,9 @@ h1 {
   padding-right: 0;
   padding-top: 0;
   margin-bottom: 1.45rem;
-  color: inherit;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  color: var(--main-txt-color);
+  font-family: "Raleway", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
   font-size: 2.25rem;
@@ -264,8 +281,8 @@ h3 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: "Raleway", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
   font-size: 1.38316rem;
@@ -281,8 +298,8 @@ h4 {
   padding-top: 0;
   margin-bottom: 1.45rem;
   color: inherit;
-  font-family: -apple-system, BlinkMacSystemFont, Segoe UI, Roboto, Oxygen,
-    Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
+  font-family: "Raleway", -apple-system, BlinkMacSystemFont, Segoe UI, Roboto,
+    Oxygen, Ubuntu, Cantarell, Fira Sans, Droid Sans, Helvetica Neue, sans-serif;
   font-weight: bold;
   text-rendering: optimizeLegibility;
   font-size: 1rem;
@@ -343,6 +360,7 @@ ul {
   margin-bottom: 1.45rem;
   list-style-position: outside;
   list-style-image: none;
+  list-style-type: none;
 }
 ol {
   margin-left: 1.45rem;
@@ -442,6 +460,7 @@ blockquote {
   padding-right: 0;
   padding-top: 0;
   margin-bottom: 1.45rem;
+  font-style: italic;
 }
 form {
   margin-left: 0;
@@ -618,5 +637,42 @@ pre tt:after {
 @media only screen and (max-width: 480px) {
   html {
     font-size: 100%;
+  }
+}
+
+article > * > a,
+article > a {
+  color: #61c900;
+  background-color: #efefef;
+  border-radius: 5px;
+  padding: 2px;
+}
+
+article > * > a:hover,
+article > a:hover {
+  color: #c6c900;
+}
+
+.tag {
+  background-color: #efefef;
+  border-radius: 4px;
+  padding: 3px;
+  width: 10%;
+  text-align: center;
+  margin-left: 5px;
+  color: var(--main-opp-color);
+}
+
+@media (prefers-color-scheme: dark) {
+  body {
+    color: var(--main-txt-color-dark);
+  }
+  html {
+    background: url("https://res.cloudinary.com/dknopoff/image/upload/f_auto/v1553460730/portfolio/prism.png")
+      repeat center center fixed;
+  }
+  input {
+    background-color: #444444;
+    color: lightgray;
   }
 }
