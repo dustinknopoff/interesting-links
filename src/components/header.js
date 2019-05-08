@@ -43,8 +43,14 @@ const Header = ({ siteTitle, description, sections, tag }) => {
         </LinksList>
         {tag && <Tag>{tag}</Tag>}
       </Info>
-      <Title>
-        <button>Follow</button>
+      <Title
+        style={{
+          display: `flex`,
+          justifyContent: `center`,
+          alignItems: `center`,
+        }}
+      >
+        <Btn>Follow</Btn>
       </Title>
     </Head>
   )
@@ -118,4 +124,16 @@ export const ListElem = styled.li`
     css`
       border: none;
     `};
+`
+
+export const Btn = styled.button`
+  background: #3779b7;
+  height: 2rem;
+  border: none;
+  border-radius: 5px;
+  color: var(--main-txt-extrme);
+
+  &:active {
+    background: #efefef;
+  }
 `
