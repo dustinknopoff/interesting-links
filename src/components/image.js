@@ -19,7 +19,7 @@ const Image = () => (
       query {
         placeholderImage: file(relativePath: { eq: "profile.jpg" }) {
           childImageSharp {
-            fluid(maxWidth: 300) {
+            fluid(maxWidth: 100) {
               ...GatsbyImageSharpFluid
             }
           }
@@ -30,7 +30,6 @@ const Image = () => (
       <Img
         style={{
           opacity: `100`,
-          transition: `opacity 0.5s ease 0.5s`,
           width: `100px`,
           height: `100px`,
           borderRadius: `50px`,

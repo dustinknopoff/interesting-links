@@ -3,11 +3,13 @@ import LinkList from "./LinkList"
 import SEO from "../components/seo"
 import { graphql } from "gatsby"
 
-const TypeList = ({ data }) => (
-  <LinkList data={data}>
-    <SEO />
-  </LinkList>
-)
+const TypeList = ({ data }) => {
+  return (
+    <LinkList data={data}>
+      <SEO />
+    </LinkList>
+  )
+}
 
 export default TypeList
 

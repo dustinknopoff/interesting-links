@@ -13,7 +13,7 @@ import styled from "styled-components"
 import Header from "./header"
 import "./layout.css"
 
-const Layout = ({ children }) => (
+const Layout = ({ children, tag }) => (
   <StaticQuery
     query={graphql`
       query SiteTitleQuery {
@@ -32,6 +32,7 @@ const Layout = ({ children }) => (
           siteTitle={data.site.siteMetadata.title}
           description={data.site.siteMetadata.description}
           sections={data.site.siteMetadata.sections}
+          tag={tag}
         />
         <Main>{children}</Main>
       </Grid>

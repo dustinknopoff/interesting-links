@@ -2,8 +2,8 @@ import React from "react"
 import ILink from "../templates/link"
 import Layout from "../components/layout"
 
-const LinkList = ({ data, children }) => (
-  <Layout>
+const LinkList = ({ data, children, tag }) => (
+  <Layout tag={tag}>
     {children}
     {data.allMarkdownRemark.edges.length === 0 && (
       <p>

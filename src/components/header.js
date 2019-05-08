@@ -3,8 +3,9 @@ import PropTypes from "prop-types"
 import React from "react"
 import Image from "./image"
 import styled, { css } from "styled-components"
+import { Tag } from "./sharedCss"
 
-const Header = ({ siteTitle, description, sections }) => {
+const Header = ({ siteTitle, description, sections, tag }) => {
   return (
     <Head>
       <Title>
@@ -20,15 +21,27 @@ const Header = ({ siteTitle, description, sections }) => {
         <LinksList>
           {sections.map((x, index) => {
             return (
-              <ListElem as={Link} to={x.toLowerCase()} key={index}>
+              <ListElem
+                as={Link}
+                to={x.toLowerCase()}
+                key={index}
+                activeClassName="active"
+              >
                 {x}
               </ListElem>
             )
           })}
-          <ListElem as={Link} to="/" end="true" key={"a"}>
+          <ListElem
+            as={Link}
+            to="/"
+            end="true"
+            key={"a"}
+            activeClassName="active"
+          >
             None
           </ListElem>
         </LinksList>
+        {tag && <Tag>{tag}</Tag>}
       </Info>
       <Title>
         <button>Follow</button>
