@@ -9,6 +9,8 @@ collections:
   - name: "link"
     label: "Link"
     folder: "_links"
+    editor:
+      preview: false
     create: true
     slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
     fields:
@@ -17,11 +19,11 @@ collections:
         widget: select
         options:
           - label: Video
-            value: VID
+            value: Video
           - label: Audio
-            value: AUD
+            value: Audio
           - label: Other
-            value: OTH
+            value: Other
       - label: "Title"
         name: "title"
       - label: "Tag"
@@ -31,3 +33,6 @@ collections:
           - "Only 1 tag is allowed with no spaces or commas"
       - label: "URL"
         name: "url"
+      - label: Date
+        name: date
+        widget: date

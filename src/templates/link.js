@@ -1,23 +1,41 @@
 import React from "react"
 import styled from "styled-components"
 import Moment from "react-moment"
+import { Tag } from "../components/sharedCss"
 import { Link } from "gatsby"
 
-const ILink = ({ node }) => (
-  <Link to={node.fields.slug}>
+const ILink = ({ frontmatter }) => {
+  const { url, title, date, tag } = frontmatter
+  return (
     <TitleDate>
-      <h4 style={{ textAlign: `right` }}>{node.frontmatter.title}</h4>
-      <Moment fromNow>{node.frontmatter.date}</Moment>
+      <TagTitle>
+        <a href={url}>
+          <h4 style={{ textAlign: `right` }}>{title}</h4>
+        </a>
+        <Tag as={Link} to={tag}>
+          {tag}
+        </Tag>
+      </TagTitle>
+      <Moment fromNow>{date}</Moment>
     </TitleDate>
-    <p style={{ marginLeft: `25%` }}>{node.excerpt}</p>
-  </Link>
-)
+  )
+}
 
 export default ILink
 
 export const TitleDate = styled.div`
   display: flex;
   justify-content: space-between;
-  flex-direction: row-reverse;
+  // flex-direction: row-reverse;
   align-items: baseline;
+`
+
+export const TagTitle = styled.div`
+  display: flex;
+  flex-direction: row;
+  align-items: baseline;
+
+  > * {
+    margin: 5px;
+  }
 `

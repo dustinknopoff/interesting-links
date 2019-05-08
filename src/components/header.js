@@ -19,9 +19,13 @@ const Header = ({ siteTitle, description, sections }) => {
         </Link>
         <LinksList>
           {sections.map((x, index) => {
-            return <ListElem key={index}>{x}</ListElem>
+            return (
+              <ListElem as={Link} to={x.toLowerCase()} key={index}>
+                {x}
+              </ListElem>
+            )
           })}
-          <ListElem end key={"a"}>
+          <ListElem as={Link} to="/" end="true" key={"a"}>
             None
           </ListElem>
         </LinksList>
