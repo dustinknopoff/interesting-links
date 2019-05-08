@@ -16,7 +16,6 @@ const ILink = ({ frontmatter }) => {
           {tag}
         </Tag>
       </TagTitle>
-      <Moment format={"MMM DD, YYYY"}>{date}</Moment>
     </TitleDate>
   )
 }

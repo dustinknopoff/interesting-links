@@ -1,3 +1,4 @@
+var proxy = require("http-proxy-middleware")
 module.exports = {
   siteMetadata: {
     title: `Dustin Knopoff`,
@@ -64,4 +65,15 @@ module.exports = {
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,
   ],
+  developMiddleware: app => {
+    app.use(
+      "/.netlify/functions/",
+      proxy({
+        target: "http://localhost:9000",
+        pathRewrite: {
+          "/.netlify/functions/": "",
+        },
+      })
+    )
+  },
 }

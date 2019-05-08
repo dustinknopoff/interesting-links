@@ -6,6 +6,9 @@ import styled, { css } from "styled-components"
 import { Tag } from "./sharedCss"
 
 const Header = ({ siteTitle, description, sections, tag }) => {
+  fetch("/.netlify/functions/info")
+    .then(response => response.json())
+    .then(console.log)
   return (
     <Head>
       <Title>
@@ -38,7 +41,7 @@ const Header = ({ siteTitle, description, sections, tag }) => {
             key={"a"}
             activeClassName="active"
           >
-            None
+            All
           </ListElem>
         </LinksList>
         {tag && <Tag>{tag}</Tag>}
