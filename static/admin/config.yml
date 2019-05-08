@@ -22,6 +22,8 @@ collections:
             value: Video
           - label: Audio
             value: Audio
+          - label: Article
+            value: Article
           - label: Other
             value: Other
       - label: "Title"

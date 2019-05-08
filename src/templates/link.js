@@ -16,7 +16,7 @@ const ILink = ({ frontmatter }) => {
           {tag}
         </Tag>
       </TagTitle>
-      <Moment fromNow>{date}</Moment>
+      <Moment format={"MMM DD, YYYY"}>{date}</Moment>
     </TitleDate>
   )
 }
@@ -28,6 +28,10 @@ export const TitleDate = styled.div`
   justify-content: space-between;
   // flex-direction: row-reverse;
   align-items: baseline;
+
+  @media only screen and (max-width: 480px) {
+    flex-direction: column;
+  }
 `
 
 export const TagTitle = styled.div`

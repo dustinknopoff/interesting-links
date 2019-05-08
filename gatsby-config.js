@@ -3,7 +3,7 @@ module.exports = {
     title: `Dustin Knopoff`,
     description: `Computer Science and Design student at Northeastern University`,
     author: `@dustinknopoff`,
-    sections: [`Video`, `Audio`, `Other`],
+    sections: [`Video`, `Audio`, `Article`, `Other`],
     social: [
       `https://dustinknopoff.dev`,
       `https://linkedin.com/in/dustinknopoff`,
