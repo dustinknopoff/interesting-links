@@ -8,6 +8,7 @@
 const { createFilePath } = require(`gatsby-source-filesystem`)
 const _ = require("lodash")
 const path = require(`path`)
+const fs = require("fs")
 
 exports.onCreateNode = ({ node, getNode, actions }) => {
   const { createNodeField } = actions
@@ -29,14 +30,19 @@ exports.createPages = ({ graphql, actions }) => {
         site {
           siteMetadata {
             sections
+            title
+            author
+            description
           }
         }
-        allMarkdownRemark {
+        allMarkdownRemark(sort: { fields: [frontmatter___date], order: ASC }) {
           edges {
             node {
               frontmatter {
                 ltype
                 tag
+                url
+                title
               }
             }
           }
@@ -69,6 +75,33 @@ exports.createPages = ({ graphql, actions }) => {
           },
         })
       })
+      let content = edges.map(({ node }) => {
+        const { frontmatter } = node
+        return { ...frontmatter }
+      })
+      const { title, author, description } = result.data.site.siteMetadata
+      let jsonFeed = {
+        title: title,
+        author: author,
+        description: description,
+        items: content,
+      }
+      fs.writeFile("./public/feed.json", JSON.stringify(jsonFeed), err => {
+        if (err) console.log(err)
+      })
+      let summary = {
+        title: title,
+        author: author,
+        description: description,
+        items: content.slice(0, 10),
+      }
+      fs.writeFile(
+        "./public/feed-summary.json",
+        JSON.stringify(summary),
+        err => {
+          if (err) console.log(err)
+        }
+      )
       resolve()
     })
   })

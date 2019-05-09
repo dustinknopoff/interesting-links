@@ -22,6 +22,21 @@ const Layout = ({ children, tag }) => (
             title
             description
             sections
+            author
+          }
+        }
+        allMarkdownRemark(
+          limit: 1
+          sort: { fields: [frontmatter___date], order: DESC }
+        ) {
+          edges {
+            node {
+              frontmatter {
+                title
+                tag
+                url
+              }
+            }
           }
         }
       }
@@ -33,6 +48,8 @@ const Layout = ({ children, tag }) => (
           description={data.site.siteMetadata.description}
           sections={data.site.siteMetadata.sections}
           tag={tag}
+          author={data.site.siteMetadata.author}
+          latestPost={data.allMarkdownRemark.edges[0]}
         />
         <Main>{children}</Main>
       </Grid>
