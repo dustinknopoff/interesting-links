@@ -59,7 +59,15 @@ module.exports = {
         name: "links",
       },
     },
+    {
+      resolve: `gatsby-source-filesystem`,
+      options: {
+        path: `${__dirname}/_me`,
+        name: "interests",
+      },
+    },
     `gatsby-plugin-netlify`,
+    `gatsby-source-instance-name-for-remark`,
     // this (optional) plugin enables Progressive Web App + Offline functionality
     // To learn more, visit: https://gatsby.dev/offline
     // `gatsby-plugin-offline`,

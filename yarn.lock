@@ -5348,6 +5348,11 @@ gatsby-source-filesystem@^2.0.33:
     valid-url "^1.0.9"
     xstate "^3.1.0"
 
+gatsby-source-instance-name-for-remark@^0.1.1:
+  version "0.1.1"
+  resolved "https://registry.yarnpkg.com/gatsby-source-instance-name-for-remark/-/gatsby-source-instance-name-for-remark-0.1.1.tgz#8c871d5c2980c01e794445128fa5c702f194da2b"
+  integrity sha512-fVfH6V4M18Km4O4+CV3QjgG3/S+bktx0o2LtSh9EYqEqFikA+ygsK+x4L3wNZRNR22KUq2UeuNxqFoQc1U5AVQ==
+
 gatsby-telemetry@^1.0.9:
   version "1.0.9"
   resolved "https://registry.yarnpkg.com/gatsby-telemetry/-/gatsby-telemetry-1.0.9.tgz#f9192d5bf72fb239d477e9b556a7dc040c4a566b"
@@ -8708,7 +8713,7 @@ netlify-cms@^2.9.1:
     react "^16.8.4"
     react-dom "^16.8.4"
 
-netlify-identity-widget@^1.4.11:
+netlify-identity-widget@^1.4.11, netlify-identity-widget@^1.5.2:
   version "1.5.2"
   resolved "https://registry.yarnpkg.com/netlify-identity-widget/-/netlify-identity-widget-1.5.2.tgz#c3bc18e275ebb4e8030bba31dfc38c9f2a540346"
   integrity sha512-A1Pwnk+Bun+Xb0hO8w9g8plrhJah3jNomqWLFnd6GvGQ4jfhUS5jCzh/Cn6uHhuGNnriSUV0lFCKb3VJBsiZeQ==

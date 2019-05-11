@@ -35,7 +35,9 @@ exports.createPages = ({ graphql, actions }) => {
             description
           }
         }
-        allMarkdownRemark(sort: { fields: [frontmatter___date], order: ASC }) {
+        allMarkdownRemark(
+          filter: { fields: { sourceInstanceName: { eq: "links" } } }
+        ) {
           edges {
             node {
               frontmatter {

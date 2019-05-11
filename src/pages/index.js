@@ -13,7 +13,9 @@ const IndexPage = () => (
             author
           }
         }
-        allMarkdownRemark {
+        allMarkdownRemark(
+          filter: { fields: { sourceInstanceName: { eq: "links" } } }
+        ) {
           edges {
             node {
               frontmatter {

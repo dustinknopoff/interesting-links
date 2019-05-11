@@ -25,10 +25,7 @@ const Layout = ({ children, tag }) => (
             author
           }
         }
-        allMarkdownRemark(
-          limit: 1
-          sort: { fields: [frontmatter___date], order: DESC }
-        ) {
+        allMarkdownRemark(limit: 1) {
           edges {
             node {
               frontmatter {

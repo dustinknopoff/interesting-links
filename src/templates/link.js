@@ -1,11 +1,10 @@
 import React from "react"
 import styled from "styled-components"
-import Moment from "react-moment"
 import { Tag } from "../components/sharedCss"
 import { Link } from "gatsby"
 
 const ILink = ({ frontmatter }) => {
-  const { url, title, date, tag } = frontmatter
+  const { url, title, tag } = frontmatter
   return (
     <TitleDate>
       <TagTitle>

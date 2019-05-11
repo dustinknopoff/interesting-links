@@ -38,3 +38,12 @@ collections:
       - label: Date
         name: date
         widget: date
+  - name: "My Interests"
+    label: Interests
+    folder: "_me"
+    editor:
+      preview: false
+    slug: "{{year}}-{{month}}-{{day}}-{{slug}}"
+    fields:
+      - name: "URL"
+        label: url
