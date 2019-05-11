@@ -1,57 +1,23 @@
-/* eslint-disable */
 import React from "react"
-import { StaticQuery, graphql } from "gatsby"
 import netlifyIdentity from "netlify-identity-widget"
-import { Grid, Main } from "../components/layout"
-import { Head, Title, Btn } from "../components/header"
+import MySubs from "../templates/myinterests"
+import styled from "styled-components"
 
-const MySubs = () => {
-  return (
-    <StaticQuery
-      query={graphql`
-        query AllInterests {
-          allMarkdownRemark(
-            filter: { fields: { sourceInstanceName: { eq: "interests" } } }
-          ) {
-            edges {
-              node {
-                frontmatter {
-                  url
-                }
-              }
-            }
-          }
-        }
-      `}
-      render={data => {
-        return (
-          <Grid>
-            <Head>
-              <Title />
-              <Title>
-                <h1>My Interests</h1>
-              </Title>
-              <Title>
-                <Btn>Add Interest</Btn>
-              </Title>
-            </Head>
-            <Main>
-              {" "}
-              {data.allMarkdownRemark.edges.map(({ node }) => {
-                console.log(`${node.frontmatter.url}/feed-summary.json`)
-                fetch(`${node.frontmatter.url}/feed-summary.json`)
-                  .then(r => r.json())
-                  .then(r => console.log(r))
-              })}
-            </Main>
-          </Grid>
-        )
-      }}
-    />
+const Me = () => {
+  return netlifyAuth.isAuthenticated ? (
+    <MySubs />
+  ) : (
+    <button
+      onClick={() =>
+        netlifyAuth.authenticate(() => console.log(netlifyAuth.user))
+      }
+    >
+      Login
+    </button>
   )
 }
 
-export default MySubs
+export default Me
 
 const netlifyAuth = {
   isAuthenticated: false,
@@ -73,3 +39,12 @@ const netlifyAuth = {
     })
   },
 }
+
+export const Wrap = styled.tr`
+  display: flex;
+  align-items: baseline;
+
+  > * {
+    padding: 10px;
+  }
+`
