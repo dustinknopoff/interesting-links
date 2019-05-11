@@ -1,10 +1,11 @@
 import React, { useState } from "react"
-import { StaticQuery, graphql } from "gatsby"
+import { StaticQuery, graphql, navigate } from "gatsby"
 import { Grid, Main } from "../components/layout"
 import { Head, Title, Btn } from "../components/header"
 import ILink from "../templates/link"
 import _ from "lodash"
 import styled from "styled-components"
+import { netlifyAuth } from "../pages/me"
 
 function MySubs() {
   const [content, setContent] = useState([])
@@ -44,7 +45,16 @@ function MySubs() {
         return (
           <Grid>
             <Head style={{ alignItems: `baseline` }}>
-              <Title />
+              <Title>
+                <Btn
+                  onClick={() => {
+                    netlifyAuth.signout()
+                    navigate("/")
+                  }}
+                >
+                  Signout
+                </Btn>
+              </Title>
               <Title>
                 <h1>My Interests</h1>
               </Title>
@@ -59,25 +69,29 @@ function MySubs() {
               </Title>
             </Head>
             <Main>
-              <table>
-                <tr>
-                  <th>Interest</th>
-                  <th>Latest Link</th>
-                </tr>
-                {content.map(c => {
-                  return (
-                    <tr>
-                      <td>
-                        <a href={c.origin} style={{ color: `#efefef` }}>
-                          <p>{c.title}</p>
-                        </a>
-                      </td>
-                      <td>
-                        <ILink frontmatter={c.items[0]} />
-                      </td>
-                    </tr>
-                  )
-                })}
+              <table style={{ maxHeight: `75vh`, overflow: `scroll` }}>
+                <thead>
+                  <tr>
+                    <th>Interest</th>
+                    <th>Latest Link</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  {content.map(c => {
+                    return (
+                      <tr key={c.url}>
+                        <td>
+                          <a href={c.origin} style={{ color: `#efefef` }}>
+                            <p>{c.title}</p>
+                          </a>
+                        </td>
+                        <td>
+                          <ILink frontmatter={c.items[0]} />
+                        </td>
+                      </tr>
+                    )
+                  })}
+                </tbody>
               </table>
             </Main>
           </Grid>

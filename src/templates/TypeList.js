@@ -3,10 +3,13 @@ import LinkList from "./LinkList"
 import SEO from "../components/seo"
 import { graphql } from "gatsby"
 
-const TypeList = ({ data }) => {
+const TypeList = ({ data, location }) => {
+  const { edges } = data.allMarkdownRemark
   return (
     <LinkList data={data}>
-      <SEO />
+      <SEO
+        title={edges.length > 0 ? edges[0].node.frontmatter.ltype : "Home"}
+      />
     </LinkList>
   )
 }
@@ -18,6 +21,7 @@ export const query = graphql`
     site {
       siteMetadata {
         author
+        title
       }
     }
     allMarkdownRemark(filter: { frontmatter: { ltype: { eq: $ltype } } }) {

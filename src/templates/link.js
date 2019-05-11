@@ -11,7 +11,7 @@ const ILink = ({ frontmatter }) => {
         <a href={url}>
           <h4 style={{ textAlign: `right` }}>{title}</h4>
         </a>
-        <Tag as={Link} to={tag}>
+        <Tag as={Link} to={`/${tag}`}>
           {tag}
         </Tag>
       </TagTitle>

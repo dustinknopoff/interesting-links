@@ -11,7 +11,7 @@ const TagList = ({ data }) => {
   }
   return (
     <LinkList data={data} tag={tag}>
-      <SEO />
+      <SEO title={`${tag.toUpperCase()} | ${data.site.siteMetadata.title}`} />
     </LinkList>
   )
 }
@@ -23,6 +23,7 @@ export const query = graphql`
     site {
       siteMetadata {
         author
+        title
       }
     }
     allMarkdownRemark(filter: { frontmatter: { tag: { eq: $tag } } }) {

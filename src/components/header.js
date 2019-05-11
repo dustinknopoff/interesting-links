@@ -23,7 +23,7 @@ const Header = ({ siteTitle, description, sections, tag }) => {
             return (
               <ListElem
                 as={Link}
-                to={x.toLowerCase()}
+                to={`/${x.toLowerCase()}`}
                 key={index}
                 activeClassName="active"
               >

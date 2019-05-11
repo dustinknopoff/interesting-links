@@ -7,7 +7,7 @@ This is a *hopefully* simple attempt to isolate that benefit of social media. It
 ## How to get Setup
 
 1. Create a github and netlify account if you don't have
-2. [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://www.github.com/dustinknopoff/interesting-links)
+2. [![Deploy to Netlify](https://www.netlify.com/img/deploy/button.svg)](https://app.netlify.com/start/deploy?repository=https://github.com/dustinknopoff/interesting-links)
 3. You'll receive an email at the address you setup with netlify. 
 4. Login.
 5. This will take you to the Netlify CMS admin panel for your new site.

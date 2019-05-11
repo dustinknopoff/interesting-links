@@ -11,14 +11,17 @@
     "gatsby-plugin-feed-generator": "^1.0.8",
     "gatsby-plugin-json-output": "^1.1.0",
     "gatsby-plugin-manifest": "^2.1.1",
+    "gatsby-plugin-modal-routing": "^1.0.0",
     "gatsby-plugin-netlify": "^2.0.16",
     "gatsby-plugin-netlify-cms": "^4.0.0",
     "gatsby-plugin-offline": "^2.1.0",
     "gatsby-plugin-prefetch-google-fonts": "^1.4.2",
+    "gatsby-plugin-purgecss": "^3.1.1",
     "gatsby-plugin-react-helmet": "^3.0.12",
     "gatsby-plugin-sharp": "^2.0.36",
     "gatsby-plugin-styled-components": "^3.0.7",
     "gatsby-source-filesystem": "^2.0.33",
+    "gatsby-source-instance-name-for-remark": "^0.1.1",
     "gatsby-transformer-remark": "^2.3.12",
     "gatsby-transformer-sharp": "^2.1.19",
     "lodash": "^4.17.11",
@@ -31,8 +34,7 @@
     "react-dom": "^16.8.6",
     "react-helmet": "^5.2.1",
     "react-moment": "^0.9.2",
-    "styled-components": "^4.2.0",
-    "gatsby-source-instance-name-for-remark": "^0.1.1"
+    "styled-components": "^4.2.0"
   },
   "devDependencies": {
     "netlify-lambda": "^1.4.7",
