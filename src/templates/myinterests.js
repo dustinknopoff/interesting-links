@@ -55,14 +55,18 @@ function MySubs() {
                   Signout
                 </Btn>
               </Title>
-              <Title>
+              <Title style={{ textAlign: `center` }}>
                 <h1>My Interests</h1>
               </Title>
               <Title>
                 <Btn
                   as="a"
                   href={"/admin/#/collections/My%20Interests"}
-                  style={{ padding: `5px`, marginBottom: `-20px` }}
+                  style={{
+                    padding: `5px`,
+                    marginBottom: `-20px`,
+                    textAlign: `right`,
+                  }}
                 >
                   Add Interest
                 </Btn>
