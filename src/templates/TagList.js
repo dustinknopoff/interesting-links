@@ -9,9 +9,10 @@ const TagList = ({ data }) => {
   if (edges.length !== 0) {
     tag = edges[0].node.frontmatter.tag
   }
+  const titleTag = `${tag}`.charAt(0).toUpperCase() + tag.slice(1)
   return (
     <LinkList data={data} tag={tag}>
-      <SEO title={`${tag.toUpperCase()} | ${data.site.siteMetadata.title}`} />
+      <SEO title={`${titleTag} | ${data.site.siteMetadata.title}`} />
     </LinkList>
   )
 }

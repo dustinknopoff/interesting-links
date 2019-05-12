@@ -2,7 +2,7 @@
   --main-txt-color: #007aff;
   --main-opp-color: #ff8400;
   --main-txt-color-dark: #5aa8fc;
-  --main-txt-extrme: #000;
+  --main-txt-extrme: #262626;
 }
 
 html {
@@ -670,7 +670,7 @@ article > a:hover {
 
 @media (prefers-color-scheme: dark) {
   :root {
-    --main-txt-extrme: #fff;
+    --main-txt-extrme: #efefef;
   }
   body {
     color: var(--main-txt-color-dark);

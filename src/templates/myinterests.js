@@ -1,7 +1,7 @@
 import React, { useState } from "react"
 import { StaticQuery, graphql, navigate } from "gatsby"
 import { Grid, Main } from "../components/layout"
-import { Head, Title, Btn } from "../components/header"
+import { Head, Title, Btn } from "../components/sharedCss"
 import ILink from "../templates/link"
 import _ from "lodash"
 import styled from "styled-components"
@@ -58,7 +58,7 @@ function MySubs() {
               <Title style={{ textAlign: `center` }}>
                 <h1>My Interests</h1>
               </Title>
-              <Title>
+              <Title style={{ textAlign: `center` }}>
                 <Btn
                   as="a"
                   href={"/admin/#/collections/My%20Interests"}

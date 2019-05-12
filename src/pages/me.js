@@ -2,7 +2,7 @@ import React, { Fragment } from "react"
 import netlifyIdentity from "netlify-identity-widget"
 import MySubs from "../templates/myinterests"
 import styled from "styled-components"
-import { Btn } from "../components/header"
+import { Btn } from "../components/sharedCss"
 import { navigate } from "gatsby"
 
 const Me = () => {

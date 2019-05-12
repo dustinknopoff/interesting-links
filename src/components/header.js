@@ -3,7 +3,7 @@ import PropTypes from "prop-types"
 import React from "react"
 import Image from "./image"
 import styled, { css } from "styled-components"
-import { Tag } from "./sharedCss"
+import { Tag, Head, Title } from "./sharedCss"
 
 const Header = ({ siteTitle, description, sections, tag }) => {
   return (
@@ -43,15 +43,7 @@ const Header = ({ siteTitle, description, sections, tag }) => {
         </LinksList>
         {tag && <Tag>{tag}</Tag>}
       </Info>
-      <Title
-        style={{
-          display: `flex`,
-          justifyContent: `center`,
-          alignItems: `center`,
-        }}
-      >
-        <Btn>Follow</Btn>
-      </Title>
+      <Title />
     </Head>
   )
 }
@@ -69,22 +61,6 @@ Header.defaultProps = {
 }
 
 export default Header
-
-export const Head = styled.header`
-  grid-column: 2 / span 12;
-  grid-row: 1;
-  display: flex;
-  flex-wrap: wrap;
-  margin-top: 4vh;
-`
-
-export const Title = styled.div`
-  width: 33%;
-
-  @media only screen and (max-width: 712px) {
-    width: 100%;
-  }
-`
 
 export const Info = styled.div`
   width: 33%;
@@ -124,16 +100,4 @@ export const ListElem = styled.li`
     css`
       border: none;
     `};
-`
-
-export const Btn = styled.button`
-  background: #3779b7;
-  height: 2rem;
-  border: none;
-  border-radius: 5px;
-  color: var(--main-txt-extrme);
-
-  &:active {
-    background: #efefef;
-  }
 `
