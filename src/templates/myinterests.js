@@ -62,7 +62,7 @@ function MySubs() {
                 <Btn
                   as="a"
                   href={"/admin/#/collections/My%20Interests"}
-                  style={{ padding: `10px`, marginBottom: `-20px` }}
+                  style={{ padding: `5px`, marginBottom: `-20px` }}
                 >
                   Add Interest
                 </Btn>
