@@ -6,18 +6,21 @@ import { Btn } from "../components/header"
 import { navigate } from "gatsby"
 
 const Me = () => {
-  netlifyIdentity.init()
-  return netlifyIdentity.currentUser() == null ? (
-    <Fragment>
-      <CenterBtn
-        onClick={() => netlifyAuth.authenticate(() => navigate("/me"))}
-      >
-        Login
-      </CenterBtn>
-    </Fragment>
-  ) : (
-    <MySubs />
-  )
+  if (typeof window !== "undefined") {
+    netlifyIdentity.init()
+    return netlifyIdentity.currentUser() == null ? (
+      <Fragment>
+        <CenterBtn
+          onClick={() => netlifyAuth.authenticate(() => navigate("/me"))}
+        >
+          Login
+        </CenterBtn>
+      </Fragment>
+    ) : (
+      <MySubs />
+    )
+  }
+  return null
 }
 
 export default Me
